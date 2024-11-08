@@ -1,0 +1,50 @@
+<svg
+  version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  viewBox="0 0 64 64"
+  xml:space="preserve"
+>
+  <!-- Asa izquierda -->
+  <path
+    d="M22,24 C22,16 26,10 32,10 C38,10 42,16 42,24"
+    fill="none"
+    stroke="#FFFFFF"
+    stroke-width="4"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <!-- Bolsa -->
+  <rect
+    x="14"
+    y="24"
+    width="36"
+    height="30"
+    rx="4"
+    ry="4"
+    fill="none"
+    stroke="#FFFFFF"
+    stroke-width="4"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <!-- Líneas decorativas en la bolsa -->
+  <line
+    x1="20"
+    y1="38"
+    x2="44"
+    y2="38"
+    stroke="#FFFFFF"
+    stroke-width="3"
+    stroke-linecap="round"
+  />
+  <line
+    x1="20"
+    y1="46"
+    x2="44"
+    y2="46"
+    stroke="#FFFFFF"
+    stroke-width="3"
+    stroke-linecap="round"
+  />
+</svg>

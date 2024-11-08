@@ -1,0 +1,84 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+import AsideBigButton from "../components/AsideBigButton.astro";
+import AsideSmallButton from "../components/AsideSmallButton.astro";
+import homeIcon from "../icons/home.svg";
+import libraryIcon from "../icons/library.svg";
+import cloudIcon from "../icons/cloud.svg";
+import storeIcon from "../icons/store.svg";
+import notificationIcon from "../icons/notification.svg";
+import socialIcon from "../icons/social.svg";
+import downloadIcon from "../icons/download.svg";
+import MainTitle from "../components/MainTitle.astro";
+import PlayLater from "../components/PlayLater.astro";
+import MyPcGames from "../components/MyPcGames.astro";
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Xbox Gamepass clone" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<div id="app" class="relative h-screen">
+			<aside class="[grid-area:aside] flex-col flex overflow-y-auto bg-accentDark items-center fixed h-screen w-[68px]">				
+				<button class="flex items-center justify-center rounded-md hover:bg-accentLight w-12 h-12 mt-2">
+					<img src={"https://i.seadn.io/gcs/files/3085b3fc65f00b28699b43efb4434eec.png"} alt="icon" width={"35px"} height={"35px"} class="rounded-full"/>
+				</button>
+				
+				<AsideBigButton icon={homeIcon} />
+				<AsideBigButton icon={libraryIcon} />
+				<AsideBigButton icon={cloudIcon} />
+				<AsideBigButton icon={storeIcon} />
+
+				<div class="mt-auto mb-2">
+					<AsideSmallButton icon={notificationIcon} />
+					<AsideSmallButton icon={socialIcon} />
+					<AsideSmallButton icon={downloadIcon} />
+				</div>
+
+			</aside>
+
+			<main class="[grid-area:main] bg-accent pl-8 pt-14">
+				<MainTitle title={"Mi biblioteca"} />
+				<PlayLater />
+				<MyPcGames />
+				<!-- <PCGame title={"Cyberpunk 2077"} image={"https://assets.xboxservices.com/assets/f4/75/f475ff8f-4217-4040-99fb-bf86ed0fccb4.jpg"} company={"CD Projekt Red"} /> -->
+
+			</main>
+
+			<slot />
+
+		</div>
+	</body>
+</html>
+
+<style>
+	#app {
+		display: grid;
+		grid-template-areas: "aside main main";
+		grid-template-columns: 68px 1fr;
+		grid-template-rows: 1fr auto;
+	}
+</style>
+
+<style is:global>
+	* {
+		box-sizing: border-box;
+	}
+
+	html {
+		font-family: system-ui, sans-serif;
+		background: #13151a;
+		user-select: none;
+	}
+</style>

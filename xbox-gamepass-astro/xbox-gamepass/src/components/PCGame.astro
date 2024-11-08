@@ -1,0 +1,26 @@
+---
+interface Props {
+	title: string;
+    image: string;
+    company: string;
+}
+
+const { title, image, company } = Astro.props;
+import checkIcon from "../icons/check.svg";
+---
+
+<div class="relative flex flex-col gap-2 bg-accentLight w-44 max-w-full h-auto rounded-sm cursor-pointer hover:brightness-125">
+    <div class="overflow-hidden">
+        <img src={image} alt="game-thumbnail" class="w-full h-40 object-cover object-center transition-transform duration-300 hover:scale-110"/>
+    </div>
+
+    <div class="flex flex-col">
+        <span class="text-white text-sm font-semibold m-0 ml-2">{title}</span>
+        <span class="text-gray-400 text-sm ml-2">{company}</span>
+    </div>
+
+    <div class="flex items-center gap-2 m-0 ml-2 pb-2">
+        <img src={checkIcon.src} alt="icon" width={"20px"} height={"20px"}/>
+        <span class="text-white text-sm">En propiedad</span>
+    </div>
+</div>

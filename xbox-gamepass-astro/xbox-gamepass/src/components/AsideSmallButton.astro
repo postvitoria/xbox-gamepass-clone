@@ -1,0 +1,11 @@
+---
+interface Props {
+	icon: ImageMetadata;
+}
+
+const { icon } = Astro.props;
+---
+
+<button class="flex items-center justify-center rounded-md hover:bg-accentLight w-12 h-12">
+    <img src={icon.src} alt="icon" width={"24px"} height={"24px"}/>
+</button>
