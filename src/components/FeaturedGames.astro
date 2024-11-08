@@ -1,7 +1,7 @@
-<section class="flex flex-col gap-4 mt-8 min-w-[320px] max-w-[1920px] pr-8">
+<section class="flex flex-col gap-4 mt-8 min-w-[320px] max-w-[1920px] pr-8 mb-8">
     <h2 class="text-white text-2xl font-semibold">Juegos destacados</h2>
     
-    <div class="grid grid-cols-2 grid-rows-2 gap-4 w-full">
+    <div class="gap-4 w-full mr-8" id="featuredGames">
         <div class="bg-accentLight rounded h-[350px] overflow-hidden relative" id="top1">
             <img class="w-full h-full object-cover rounded transition-transform duration-300 hover:scale-110" src="https://image.api.playstation.com/vulcan/ap/rnd/202405/3000/f058109cff9406f77285bf43417543f4676347f8113baa72.jpg"></img>
             <span class="absolute bottom-4 left-4 text-white font-semibold text-xl">Call of Duty: Black Ops 6</span>
@@ -23,3 +23,12 @@
         </div>
     </div>
 </section>
+
+<style>
+	#featuredGames {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 350px 200px;
+		row-gap: 1rem;
+	}
+</style>
