@@ -1,0 +1,45 @@
+---
+import GameCard from "./GameCard.astro";
+import leftIcon from "../icons/left.svg";
+import rightIcon from "../icons/right.svg";
+---
+
+<section class="flex flex-col">
+    <div class="flex justify-between items-center mb-4 mr-8">
+        <div>
+            <h2 class="text-2xl font-semibold text-white">Agregados recientemente a Game Pass</h2>
+            <span class="text-gray-400 text-base">Explora las novedades en Game Pass</span>
+        </div>
+        <div class="flex gap-1">
+            <div class="w-[35px] h-[35px] bg-accentLight rounded-md flex items-center justify-center hover:brightness-125 cursor-pointer"><img src={leftIcon.src} alt="left-icon" width="28" height="28"/></div>
+            <div class="w-[35px] h-[35px] bg-accentLight rounded-md flex items-center justify-center hover:brightness-125 cursor-pointer"><img src={rightIcon.src} alt="right-icon" width="28" height="28"/></div>
+        </div>
+    </div>
+
+    <div class="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] mr-8">
+        <div class="snap-start shrink-0">
+            <GameCard title="Minecraft" image="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Minecraft-creeper-face.jpg/640px-Minecraft-creeper-face.jpg" company="Mojang"/>
+        </div>
+        <div class="snap-start shrink-0">
+            <GameCard title="Goat Simulator" image="https://image.api.playstation.com/cdn/EP4415/CUSA02779_00/05UDaF6g0ZyfhUZdSg5xgRRpuNBDep4Q.png" company="Coffee Stain Studios" trending={true}/>
+        </div>
+        <div class="snap-start shrink-0">
+            <GameCard title="Star Craft II" image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRstB4Ngv5tD2cj9LGgTrFceqEoa3NtjF2caA&s" company="Blizzard Entertainment"/>
+        </div>
+        <div class="snap-start shrink-0">
+            <GameCard title="Call of Duty: Black Ops 6" image="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2024/08/call-duty-black-ops-6-1725018952582-4064060.jpg" company="Activision" trending={true}/>
+        </div>
+        <div class="snap-start shrink-0">
+            <GameCard title={"Dead Island 2"} image={"https://image.api.playstation.com/vulcan/ap/rnd/202208/1012/SyX3pwXDmPfzSY6KsdCU6dfk.jpg"} company={"Dambuster Studios"}/>
+        </div>
+        <div class="snap-start shrink-0">
+            <GameCard title={"Sifu"} image={"https://image.api.playstation.com/vulcan/img/rnd/202201/1615/gsP0wXmV6sfdDDqKCh5tkDmf.jpg"} company={"Sloclap"}/>
+        </div>
+        <div class="snap-start shrink-0">
+            <GameCard title={"Cyberpunk 2077"} image={"https://assets.xboxservices.com/assets/f4/75/f475ff8f-4217-4040-99fb-bf86ed0fccb4.jpg"} company={"CD Projekt Red"} trending={true}/>
+        </div>
+        <div class="snap-start shrink-0">
+            <GameCard title={"Forza Horizon 5"} image={"https://media.revistagq.com/photos/615ead17086ccf7bf98f40ae/4:3/w_1440,h_1080,c_limit/Forza-Horizon-5.jpg"} company={"Xbox Game Studios"}/>
+        </div>
+    </div>
+</section>

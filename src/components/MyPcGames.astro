@@ -1,5 +1,5 @@
 ---
-import PCGame from "../components/PCGame.astro";
+import GameCard from "../components/GameCard.astro";
 import filterIcon from "../icons/filter.svg";
 ---
 
@@ -7,11 +7,11 @@ import filterIcon from "../icons/filter.svg";
     <h2 class="text-white text-2xl font-semibold">Mis juegos de PC</h2>
 
     <div class="flex justify-between items-center">
-        <div class="flex text-center  items-center gap-2 h-16">
+        <div class="flex text-center items-center gap-2 h-16">
             <span class="text-gray-400 text-sm">Mostrando 4 resultados</span>
         </div>
 
-        <div class="flex items-center gap-4 mr-8">
+        <div class="flex items-center gap-3 mr-8">
             <div class="flex items-center gap-2 hover:bg-accentLight px-2 py-1">
                 <input 
                     type="checkbox" 
@@ -44,13 +44,11 @@ import filterIcon from "../icons/filter.svg";
     </div>
 
     <div class="flex flex-wrap gap-6">
-        <PCGame title={"Cyberpunk 2077"} image={"https://assets.xboxservices.com/assets/f4/75/f475ff8f-4217-4040-99fb-bf86ed0fccb4.jpg"} company={"CD Projekt Red"} />
-        <PCGame title={"Sifu"} image={"https://image.api.playstation.com/vulcan/img/rnd/202201/1615/gsP0wXmV6sfdDDqKCh5tkDmf.jpg"} company={"Sloclap"} />
-        <PCGame title={"Fallout Shelter"} image={"https://media.vandal.net/m/32004/fallout-shelter-2015812121522_1.jpg"} company={"Bethesda Game Studios"} />
-        <PCGame title={"Forza Horizon 5"} image={"https://media.revistagq.com/photos/615ead17086ccf7bf98f40ae/4:3/w_1440,h_1080,c_limit/Forza-Horizon-5.jpg"} company={"Xbox Game Studios"} />
-        <PCGame title={"Minecraft for Windows"} image={"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Minecraft-creeper-face.jpg/640px-Minecraft-creeper-face.jpg"} company={"Mojang Studios"} />
-        <PCGame title={"Dead Island 2"} image={"https://image.api.playstation.com/vulcan/ap/rnd/202208/1012/SyX3pwXDmPfzSY6KsdCU6dfk.jpg"} company={"Dambuster Studios"} />
-        <PCGame title={"Dead Island 2"} image={"https://image.api.playstation.com/vulcan/ap/rnd/202208/1012/SyX3pwXDmPfzSY6KsdCU6dfk.jpg"} company={"Dambuster Studios"} />
-        <PCGame title={"Dead Island 2"} image={"https://image.api.playstation.com/vulcan/ap/rnd/202208/1012/SyX3pwXDmPfzSY6KsdCU6dfk.jpg"} company={"Dambuster Studios"} />
+        <GameCard title={"Cyberpunk 2077"} image={"https://assets.xboxservices.com/assets/f4/75/f475ff8f-4217-4040-99fb-bf86ed0fccb4.jpg"} company={"CD Projekt Red"} property={true}/>
+        <GameCard title={"Sifu"} image={"https://image.api.playstation.com/vulcan/img/rnd/202201/1615/gsP0wXmV6sfdDDqKCh5tkDmf.jpg"} company={"Sloclap"} property={true}/>
+        <GameCard title={"Fallout Shelter"} image={"https://media.vandal.net/m/32004/fallout-shelter-2015812121522_1.jpg"} company={"Bethesda Game Studios"} property={true}/>
+        <GameCard title={"Forza Horizon 5"} image={"https://media.revistagq.com/photos/615ead17086ccf7bf98f40ae/4:3/w_1440,h_1080,c_limit/Forza-Horizon-5.jpg"} company={"Xbox Game Studios"} property={true}/>
+        <GameCard title={"Minecraft for Windows"} image={"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Minecraft-creeper-face.jpg/640px-Minecraft-creeper-face.jpg"} company={"Mojang Studios"} property={true}/>
+        <GameCard title={"Dead Island 2"} image={"https://image.api.playstation.com/vulcan/ap/rnd/202208/1012/SyX3pwXDmPfzSY6KsdCU6dfk.jpg"} company={"Dambuster Studios"} property={true}/>
     </div>
 </section>

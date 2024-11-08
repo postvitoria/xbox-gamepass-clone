@@ -1,0 +1,34 @@
+---
+interface Props {
+	title: string;
+    image: string;
+    company: string;
+    property?: boolean;
+    trending?: boolean;
+}
+
+const { title, image, company, property, trending } = Astro.props;
+import checkIcon from "../icons/check.svg";
+import trendingIcon from "../icons/trending.svg";
+---
+
+<div class="relative flex flex-col gap-2 bg-accentLight hover:bg-[#3d3f42] w-44 max-w-full h-auto rounded-sm cursor-pointer group">
+    <div class="overflow-hidden">
+        <img src={image} alt="game-thumbnail" class="w-full h-40 object-cover object-center transition-transform duration-300 group-hover:scale-110 rounded-t-md"/>
+        {trending && (
+            <div class="absolute top-0 right-0 bg-black opacity-75 w-[35px] h-[35px] flex items-center justify-center rounded-sm">
+                <img src={trendingIcon.src} alt="trending" width="32" height="32"/>
+            </div>
+        )}
+    </div>
+
+    <div class="flex flex-col">
+        <span class="text-white text-sm font-semibold m-0 ml-2">{title}</span>
+        <span class="text-gray-400 text-sm ml-2">{company}</span>
+    </div>
+
+    <div class="flex items-center gap-2 m-0 ml-2 pb-2">
+        {property && <img src={checkIcon.src} alt="icon" width={"20px"} height={"20px"}/>}
+        {property && <span class="text-white text-sm">En propiedad</span>}
+    </div>
+</div>

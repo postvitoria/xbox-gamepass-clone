@@ -13,9 +13,8 @@ import storeIcon from "../icons/store.svg";
 import notificationIcon from "../icons/notification.svg";
 import socialIcon from "../icons/social.svg";
 import downloadIcon from "../icons/download.svg";
-import MainTitle from "../components/MainTitle.astro";
-import PlayLater from "../components/PlayLater.astro";
-import MyPcGames from "../components/MyPcGames.astro";
+import LibraryWindow from "../pages/LibraryWindow.astro";
+import HomeWindow from "../pages/HomeWindow.astro";
 ---
 
 <!doctype html>
@@ -35,32 +34,53 @@ import MyPcGames from "../components/MyPcGames.astro";
 					<img src={"https://i.seadn.io/gcs/files/3085b3fc65f00b28699b43efb4434eec.png"} alt="icon" width={"35px"} height={"35px"} class="rounded-full"/>
 				</button>
 				
-				<AsideBigButton icon={homeIcon} />
-				<AsideBigButton icon={libraryIcon} />
-				<AsideBigButton icon={cloudIcon} />
-				<AsideBigButton icon={storeIcon} />
+				<AsideBigButton icon={homeIcon} id="homeButton" />
+				<AsideBigButton icon={libraryIcon} id="libraryButton" />
+				<AsideBigButton icon={cloudIcon} id="cloudButton" />
+				<AsideBigButton icon={storeIcon} id="storeButton" />
 
 				<div class="mt-auto mb-2">
 					<AsideSmallButton icon={notificationIcon} />
 					<AsideSmallButton icon={socialIcon} />
 					<AsideSmallButton icon={downloadIcon} />
 				</div>
-
 			</aside>
 
-			<main class="[grid-area:main] bg-accent pl-8 pt-14">
-				<MainTitle title={"Mi biblioteca"} />
-				<PlayLater />
-				<MyPcGames />
-				<!-- <PCGame title={"Cyberpunk 2077"} image={"https://assets.xboxservices.com/assets/f4/75/f475ff8f-4217-4040-99fb-bf86ed0fccb4.jpg"} company={"CD Projekt Red"} /> -->
-
-			</main>
-
-			<slot />
-
+			<LibraryWindow />
+			<HomeWindow />
 		</div>
 	</body>
 </html>
+
+
+<script>
+	const windows = ['library', 'home'];
+
+	windows.forEach(window => {
+		const button = document.getElementById(`${window}Button`);
+		const windowElement = document.getElementById(`${window}Window`);
+
+		if (button && windowElement) {
+			button.addEventListener('click', () => {
+				windows.forEach(w => {
+					const element = document.getElementById(`${w}Window`);
+					const otherButton = document.getElementById(`${w}Button`);
+
+					if (element) {
+						element.classList.add('hidden');
+					}
+					
+					if (otherButton) {
+						otherButton.classList.remove('bg-accentLight');
+					}
+				});
+
+				windowElement.classList.remove('hidden');
+				button.classList.add('bg-accentLight');
+			});
+		}
+	});
+</script>
 
 <style>
 	#app {
@@ -80,5 +100,18 @@ import MyPcGames from "../components/MyPcGames.astro";
 		font-family: system-ui, sans-serif;
 		background: #13151a;
 		user-select: none;
+	}
+
+	::-webkit-scrollbar {
+		width: 5px;
+	}
+
+	::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: #2f3032;
+		border-radius: 5px;
 	}
 </style>
