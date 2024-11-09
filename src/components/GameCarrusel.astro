@@ -1,0 +1,50 @@
+---
+import GameCard from "./GameCard.astro";
+import leftIcon from "../icons/left.svg";
+import rightIcon from "../icons/right.svg";
+
+interface Props {
+	title: string;
+    subtitle: string;
+    games: Array<{
+        title: string;
+        image: string;
+        company: string;
+        property?: boolean;
+        trending?: boolean;
+        price?: number;
+        discount?: number;
+    }>;
+}
+
+const { title, subtitle, games } = Astro.props;
+---
+
+<section class="flex flex-col ml-8 mt-8">
+    <div class="flex justify-between items-center mb-4 mr-8">
+        <div>
+            <h2 class="text-2xl font-semibold text-white">{title}</h2>
+            <span class="text-gray-400 text-base">{subtitle}</span>
+        </div>
+        <div class="flex gap-1">
+            <div class="w-[32px] h-[32px] bg-accentLight rounded-md flex items-center justify-center hover:brightness-125 cursor-pointer"><img src={leftIcon.src} alt="left-icon" width="24" height="24"/></div>
+            <div class="w-[32px] h-[32px] bg-accentLight rounded-md flex items-center justify-center hover:brightness-125 cursor-pointer"><img src={rightIcon.src} alt="right-icon" width="24" height="24"/></div>
+        </div>
+    </div>
+
+    <div class="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] mr-8">
+        {games.map((game) => (
+            <div class="snap-start shrink-0">
+                <GameCard 
+                    title={game.title}
+                    image={game.image}
+                    company={game.company}
+                    trending={game.trending}
+                    property={game.property}
+                    price={game.price}
+                    discount={game.discount}
+                />
+            </div>
+        ))}
+    </div>
+</section>

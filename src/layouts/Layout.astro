@@ -15,6 +15,7 @@ import socialIcon from "../icons/social.svg";
 import downloadIcon from "../icons/download.svg";
 import LibraryWindow from "../pages/LibraryWindow.astro";
 import HomeWindow from "../pages/HomeWindow.astro";
+import ProfileContext from "../components/ProfileContext.astro";
 ---
 
 <!doctype html>
@@ -30,7 +31,7 @@ import HomeWindow from "../pages/HomeWindow.astro";
 	<body>
 		<div id="app" class="relative h-screen">
 			<aside class="[grid-area:aside] flex-col flex overflow-y-auto bg-accentDark items-center fixed h-screen w-[68px]">				
-				<button class="flex items-center justify-center rounded-md hover:bg-accentLight w-12 h-12 mt-2">
+				<button id="profileButton" class="flex items-center justify-center rounded-md hover:bg-accentLight w-12 h-12 mt-2">
 					<img src={"https://i.seadn.io/gcs/files/3085b3fc65f00b28699b43efb4434eec.png"} alt="icon" width={"35px"} height={"35px"} class="rounded-full"/>
 				</button>
 				
@@ -48,6 +49,7 @@ import HomeWindow from "../pages/HomeWindow.astro";
 
 			<LibraryWindow />
 			<HomeWindow />
+			<ProfileContext />
 		</div>
 	</body>
 </html>
@@ -80,6 +82,26 @@ import HomeWindow from "../pages/HomeWindow.astro";
 			});
 		}
 	});
+
+	// Manejo del menú de perfil
+	const profileButton = document.getElementById('profileButton');
+	const profileContext = document.getElementById('profileContext');
+
+	if (profileButton && profileContext) {
+		profileContext.classList.add('hidden');
+		
+		profileButton.addEventListener('click', () => {
+			profileContext.classList.toggle('hidden');
+		});
+
+		// Cerrar el menú al hacer click fuera
+		document.addEventListener('click', (e) => {
+			const target = e.target as Node;
+			if (!profileButton.contains(target) && !profileContext.contains(target)) {
+				profileContext.classList.add('hidden');
+			}
+		});
+	}
 </script>
 
 <style>

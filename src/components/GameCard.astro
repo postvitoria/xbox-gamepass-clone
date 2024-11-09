@@ -1,20 +1,22 @@
 ---
 interface Props {
-	title: string;
+	title?: string;
     image: string;
-    company: string;
+    company?: string;
     property?: boolean;
     trending?: boolean;
+    price?: number;
+    discount?: number;
 }
 
-const { title, image, company, property, trending } = Astro.props;
+const { title, image, company, property, trending, price, discount } = Astro.props;
 import checkIcon from "../icons/check.svg";
 import trendingIcon from "../icons/trending.svg";
 ---
 
-<div class="relative flex flex-col gap-2 bg-accentLight hover:bg-[#3d3f42] w-44 max-w-full h-auto rounded-sm cursor-pointer group">
-    <div class="overflow-hidden">
-        <img src={image} alt="game-thumbnail" class="w-full h-40 object-cover object-center transition-transform duration-300 group-hover:scale-110 rounded-t-md"/>
+<div class={`relative flex flex-col bg-accentLight hover:bg-[#3d3f42] w-44 max-w-full rounded-sm cursor-pointer group ${!title && !company ? 'h-40' : 'h-auto gap-2'}`}>
+    <div class="overflow-hidden h-full">
+        <img src={image} alt="game-thumbnail" class={`w-full object-cover object-center transition-transform duration-300 group-hover:scale-110 ${!title && !company ? 'h-full rounded-sm' : 'h-40 rounded-t-md'}`}/>
         {trending && (
             <div class="absolute top-0 right-0 bg-black opacity-75 w-[35px] h-[35px] flex items-center justify-center rounded-sm">
                 <img src={trendingIcon.src} alt="trending" width="32" height="32"/>
@@ -22,13 +24,30 @@ import trendingIcon from "../icons/trending.svg";
         )}
     </div>
 
-    <div class="flex flex-col">
-        <span class="text-white text-sm font-semibold m-0 ml-2">{title}</span>
-        <span class="text-gray-400 text-sm ml-2">{company}</span>
-    </div>
+    {(title || company) && (
+        <div class="flex flex-col">
+            {title && (<span class="text-white text-sm font-semibold m-0 ml-2 truncate max-w-[160px]">{title}</span>)}
+            {company && (<span class="text-gray-400 text-sm ml-2 truncate max-w-[160px]">{company}</span>)}
+        </div>
+    )}
 
-    <div class="flex items-center gap-2 m-0 ml-2 pb-2">
-        {property && <img src={checkIcon.src} alt="icon" width={"20px"} height={"20px"}/>}
-        {property && <span class="text-white text-sm">En propiedad</span>}
-    </div>
+    {(title || company) && (
+        <div class="flex items-center gap-2 m-0 ml-2 pb-2 min-h-[28px]">
+            {property && <img src={checkIcon.src} alt="icon" width={"20px"} height={"20px"}/>}
+            {property && <span class="text-white text-sm">En propiedad</span>}
+            {price && (
+                <div class="flex items-center gap-2">
+                    {discount ? (
+                        <div class="flex items-center gap-1">
+                            <span class="text-gray-400 text-sm line-through">{price}€</span>
+                            <span class="text-white text-sm">{(price * (1 - discount/100)).toFixed(2)}€</span>
+                            <span class="text-green-500 text-sm">-{discount}%</span>
+                        </div>
+                    ) : (
+                        <span class="text-white text-sm">{price}€</span>
+                    )}
+                </div>
+            )}
+        </div>
+    )}
 </div>

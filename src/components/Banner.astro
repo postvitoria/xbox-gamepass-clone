@@ -1,0 +1,38 @@
+---
+interface Props {
+    description: string;
+    background: string;
+    games?: Array<{
+        title: string;
+        image: string;
+        company?: string;
+        property?: boolean;
+        trending?: boolean;
+        price?: number;
+        discount?: number;
+    }>;
+}
+
+const { description, background, games } = Astro.props;
+import GameCard from "./GameCard.astro";
+---
+
+<section class="flex items-center justify-between w-full min-h-fit bg-cover bg-center rounded-xl my-4" style={`background-image: url(${background})`}>
+    <span class="text-white font-semibold ml-8 max-w-[324px] break-words">{description}</span>
+    
+    <div class="flex gap-4 overflow-x-auto my-4 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] ml-8 mr-8">
+        {games && games.map((game) => (
+            <div class="snap-start shrink-0">
+                <GameCard 
+                    title={game.title}
+                    image={game.image}
+                    company={game.company}
+                    trending={game.trending}
+                    property={game.property}
+                    price={game.price}
+                    discount={game.discount}
+                />
+            </div>
+        ))}
+    </div>
+</section>
