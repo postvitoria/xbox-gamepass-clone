@@ -1,0 +1,38 @@
+---
+import leftIcon from "../icons/left.svg";
+import rightIcon from "../icons/right.svg";
+import pauseIcon from "../icons/pause.svg";
+import GameMinibanner from "./GameMinibanner.astro";
+---
+
+<section class="flex flex-col ml-8">
+    <div class="flex items-center justify-between">
+        <h2 class="text-white text-2xl font-semibold">¿Qué está ocurriendo?</h2>
+
+        <div class="flex justify-between items-center mb-4 mr-8">
+            <div class="flex gap-3">
+                <div class="w-[32px] h-[32px] bg-accentLight rounded-md flex items-center justify-center hover:brightness-125 cursor-pointer"><img src={leftIcon.src} alt="left-icon" width="24" height="24"/></div>
+                <div class="w-[32px] h-[32px] bg-accentLight rounded-md flex items-center justify-center hover:brightness-125 cursor-pointer"><img src={pauseIcon.src} alt="left-icon" width="24" height="24"/></div>
+                <div class="w-[32px] h-[32px] bg-accentLight rounded-md flex items-center justify-center hover:brightness-125 cursor-pointer"><img src={rightIcon.src} alt="right-icon" width="24" height="24"/></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] mr-8">
+        <div class="snap-start shrink-0">
+            <GameMinibanner title="Dead Space" subtitle="Videojuego de disparos en tercera persona" background="https://media.contentapi.ea.com/content/dam/eacom/dead-space/images/2022/10/dead-space-featured-image.jpg.adapt.crop191x100.1200w.jpg"/>
+        </div>
+
+        <div class="snap-start shrink-0">
+            <GameMinibanner title="God of War Ragnarök" subtitle="Juego de acción y aventura" background="https://image.api.playstation.com/vulcan/ap/rnd/202207/1210/4xJ8XB3bi888QTLZYdl7Oi0s.png"/>
+        </div>
+
+        <div class="snap-start shrink-0">
+            <GameMinibanner title="Starfield" subtitle="RPG de ciencia ficción" background="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1716740/capsule_616x353.jpg"/>
+        </div>
+
+        <div class="snap-start shrink-0">
+            <GameMinibanner title="Forza Horizon 5" subtitle="Juego de carreras" background="https://store-images.s-microsoft.com/image/apps.33953.13806078025361171.9723cf5e-1e29-4d9d-ad0a-cc37a95bb75d.afabb748-2c30-4a7e-8072-2809a222192d?q=90&w=480&h=270"/>
+        </div>
+    </div>
+</section>

@@ -13,8 +13,10 @@ import storeIcon from "../icons/store.svg";
 import notificationIcon from "../icons/notification.svg";
 import socialIcon from "../icons/social.svg";
 import downloadIcon from "../icons/download.svg";
+import gamepassIcon from "../icons/gamepass.svg";
 import LibraryWindow from "../pages/LibraryWindow.astro";
 import HomeWindow from "../pages/HomeWindow.astro";
+import GamepassWindow from "../pages/GamepassWindow.astro";
 import ProfileContext from "../components/ProfileContext.astro";
 ---
 
@@ -36,6 +38,7 @@ import ProfileContext from "../components/ProfileContext.astro";
 				</button>
 				
 				<AsideBigButton icon={homeIcon} id="homeButton" />
+				<AsideBigButton icon={gamepassIcon} id="gamepassButton" />
 				<AsideBigButton icon={libraryIcon} id="libraryButton" />
 				<AsideBigButton icon={cloudIcon} id="cloudButton" />
 				<AsideBigButton icon={storeIcon} id="storeButton" />
@@ -47,8 +50,9 @@ import ProfileContext from "../components/ProfileContext.astro";
 				</div>
 			</aside>
 
-			<LibraryWindow />
 			<HomeWindow />
+			<GamepassWindow />
+			<LibraryWindow />
 			<ProfileContext />
 		</div>
 	</body>
@@ -56,7 +60,7 @@ import ProfileContext from "../components/ProfileContext.astro";
 
 
 <script>
-	const windows = ['library', 'home'];
+	const windows = ['library', 'home', 'gamepass'];
 
 	windows.forEach(window => {
 		const button = document.getElementById(`${window}Button`);

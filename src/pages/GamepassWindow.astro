@@ -1,0 +1,138 @@
+---
+import WhatsHappening from "../components/WhatsHappening.astro";
+import CompaniesButtons from "../components/CompaniesButtons.astro";
+import GameCarrusel from "../components/GameCarrusel.astro";
+---
+
+<main id="gamepassWindow" class="[grid-area:main] bg-accent hidden">
+    <h1 class="text-white text-4xl font-semibold mt-14 ml-8 mb-4">Gamepass</h1>
+    <WhatsHappening />
+    <CompaniesButtons />
+    <GameCarrusel title="Agregados recientemente a Game Pass" subtitle="Explora las novedades en Game Pass" games={[
+        {
+            title: "Remnant II",
+            image: "https://cdn.cloudflare.steamstatic.com/steam/apps/1282100/capsule_616x353.jpg",
+            company: "Gunfire Games",
+            price: 49.99,
+            discount: 25
+        },
+        {
+            title: "Starfield",
+            image: "https://cdn.cloudflare.steamstatic.com/steam/apps/1716740/capsule_616x353.jpg",
+            company: "Bethesda Game Studios",
+            trending: true
+        },
+        {
+            title: "Sea of Stars",
+            image: "https://cdn.cloudflare.steamstatic.com/steam/apps/1244090/capsule_616x353.jpg",
+            company: "Sabotage Studio",
+            price: 34.99
+        },
+        {
+            title: "Lies of P",
+            image: "https://image.api.playstation.com/vulcan/ap/rnd/202305/2308/06b354c8015b3c71e54f43aa883aab4641285d4a91734681.png",
+            company: "NEOWIZ",
+            price: 49.99,
+            discount: 15
+        },
+        {
+            title: "The Last of Us Part I",
+            image: "https://m.media-amazon.com/images/M/MV5BMTE2MmQ3OTctZmExNi00ZTYxLTgzMGYtOTdlYjFjNzIxNWMxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+            company: "Naughty Dog"
+        },
+        {
+            title: "Helldivers 2",
+            image: "https://cdn.cdkeys.com/700x700/media/catalog/product/n/e/new_project_-_2023-09-18t175517.723.jpg",
+            company: "PlayStation Studios"
+        },
+        {
+            title: "Like a Dragon: Infinite Wealth",
+            image: "https://upload.wikimedia.org/wikipedia/en/0/0f/Like_a_Dragon_Infinite_Wealth_Cover_Art.jpg",
+            company: "SEGA"
+        },
+        {
+            title: "Persona 3 Reload",
+            image: "https://www.gtm-store.com/wp-content/uploads/2024/02/Full-Persona-3-Reload-Nomirror.jpg",
+            company: "ATLUS"
+        },
+        {
+            title: "Palworld",
+            image: "https://cdn.akamai.steamstatic.com/steam/apps/1623730/capsule_616x353.jpg", 
+            company: "Pocket Pair",
+            price: 29.99,
+            discount: 20
+        },
+        {
+            title: "Diablo IV",
+            image: "https://image.api.playstation.com/vulcan/ap/rnd/202405/3123/21a60345b63762324e97658fce8d3c1fa35dfc3dd9555629.jpg",
+            company: "Blizzard Entertainment",
+            price: 59.99,
+            discount: 10,
+            trending: true
+        }
+    ]}/>
+
+    <GameCarrusel title="Los mas populares" subtitle="Explora las novedades en Game Pass" games={[
+        {
+            title: "Starfield",
+            image: "https://cdn.cloudflare.steamstatic.com/steam/apps/1716740/capsule_616x353.jpg",
+            company: "Bethesda Game Studios",
+            trending: true
+        },
+        {
+            title: "Helldivers 2",
+            image: "https://cdn.cdkeys.com/700x700/media/catalog/product/n/e/new_project_-_2023-09-18t175517.723.jpg",
+            company: "PlayStation Studios"
+        },
+        {
+            title: "Palworld",
+            image: "https://cdn.akamai.steamstatic.com/steam/apps/1623730/capsule_616x353.jpg", 
+            company: "Pocket Pair",
+            price: 29.99,
+            discount: 20
+        },
+        {
+            title: "Diablo IV",
+            image: "https://image.api.playstation.com/vulcan/ap/rnd/202405/3123/21a60345b63762324e97658fce8d3c1fa35dfc3dd9555629.jpg",
+            company: "Blizzard Entertainment",
+            price: 59.99,
+            discount: 10,
+            trending: true
+        },
+        {
+            title: "The Last of Us Part I",
+            image: "https://m.media-amazon.com/images/M/MV5BMTE2MmQ3OTctZmExNi00ZTYxLTgzMGYtOTdlYjFjNzIxNWMxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+            company: "Naughty Dog"
+        },
+        {
+            title: "Persona 3 Reload",
+            image: "https://www.gtm-store.com/wp-content/uploads/2024/02/Full-Persona-3-Reload-Nomirror.jpg",
+            company: "ATLUS"
+        },
+        {
+            title: "Like a Dragon: Infinite Wealth",
+            image: "https://upload.wikimedia.org/wikipedia/en/0/0f/Like_a_Dragon_Infinite_Wealth_Cover_Art.jpg",
+            company: "SEGA"
+        },
+        {
+            title: "Sea of Stars",
+            image: "https://cdn.cloudflare.steamstatic.com/steam/apps/1244090/capsule_616x353.jpg",
+            company: "Sabotage Studio",
+            price: 34.99
+        },
+        {
+            title: "Lies of P",
+            image: "https://image.api.playstation.com/vulcan/ap/rnd/202305/2308/06b354c8015b3c71e54f43aa883aab4641285d4a91734681.png",
+            company: "NEOWIZ",
+            price: 49.99,
+            discount: 15
+        },
+        {
+            title: "Remnant II",
+            image: "https://cdn.cloudflare.steamstatic.com/steam/apps/1282100/capsule_616x353.jpg",
+            company: "Gunfire Games",
+            price: 49.99,
+            discount: 25
+        }
+    ]}/>
+</main>

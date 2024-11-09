@@ -1,0 +1,14 @@
+---
+interface Props {
+	title: string;
+    subtitle: string;
+    background: string;
+}
+
+const { title, subtitle, background } = Astro.props;
+---
+
+<div class="flex flex-col rounded-md w-[500px] h-[250px] bg-cover bg-center hover:border-2 hover:border-white" style={`background-image: url(${background})`}>
+    <h2 class="text-white text-2xl font-semibold mt-auto ml-4">{title}</h2>
+    <span class="text-white text-base mb-4 ml-4">{subtitle}</span>
+</div>

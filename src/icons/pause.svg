@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="34" height="35">
+  <!-- Primer rectángulo (barra de pausa) -->
+  <rect x="18" y="12" width="8" height="40" rx="2" ry="2" fill="none" stroke="#FFFFFF" stroke-width="4"/>
+  
+  <!-- Segundo rectángulo (barra de pausa) -->
+  <rect x="38" y="12" width="8" height="40" rx="2" ry="2" fill="none" stroke="#FFFFFF" stroke-width="4"/>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 80" width="54" height="62">
+  <!-- Contenedor con bordes redondeados -->
+  <rect x="5" y="5" width="90" height="70" rx="8" ry="8" fill="none" stroke="#FFFFFF" stroke-width="6"/>
+
+  <!-- Texto "GAME" -->
+  <text x="50" y="35" font-family="Arial, sans-serif" font-size="22" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1"  text-anchor="middle">
+    GAME
+  </text>
+
+  <!-- Texto "PASS" -->
+  <text x="50" y="60" font-family="Arial, sans-serif" font-size="22" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1"  text-anchor="middle">
+    PASS
+  </text>
+</svg>
