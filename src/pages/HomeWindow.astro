@@ -3,9 +3,11 @@ import ResumeGame from "../components/ResumeGame.astro";
 import FeaturedGames from "../components/FeaturedGames.astro";
 import GameCarrusel from "../components/GameCarrusel.astro";
 import Banner from "../components/Banner.astro";
+import Header from "../components/Header.astro";
 ---
 
 <main class="[grid-area:main] bg-accent hidden" id="homeWindow">
+    <Header />
     <ResumeGame />
     <FeaturedGames />
     <GameCarrusel title="Agregados recientemente a Game Pass" subtitle="Explora las novedades en Game Pass" games={[

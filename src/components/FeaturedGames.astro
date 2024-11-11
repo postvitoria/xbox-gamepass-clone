@@ -2,22 +2,22 @@
     <h2 class="text-white text-2xl font-semibold">Destacados</h2>
     
     <div class="gap-4 w-full mr-8" id="featuredGames">
-        <div class="bg-accentLight rounded h-[350px] overflow-hidden relative" id="top1">
+        <div class="bg-accentLight rounded h-[375px] overflow-hidden relative" id="top1">
             <img class="w-full h-full object-cover rounded transition-transform duration-300 hover:scale-110" src="https://image.api.playstation.com/vulcan/ap/rnd/202405/3000/f058109cff9406f77285bf43417543f4676347f8113baa72.jpg"></img>
             <span class="absolute bottom-4 left-4 text-white font-semibold text-xl">Call of Duty: Black Ops 6</span>
         </div>
 
-        <div class="bg-accentLight rounded h-[350px] overflow-hidden relative" id="bottom1">
+        <div class="bg-accentLight rounded h-[375px] overflow-hidden relative" id="bottom1">
             <img class="w-full h-full object-cover rounded transition-transform duration-300 hover:scale-110" src="https://sm.ign.com/t/ign_es/news/f/frostpunk-/frostpunk-2-release-date-set-for-july-along-with-closed-beta_4w73.1200.png"></img>
             <span class="absolute bottom-4 left-4 text-white font-semibold text-xl">Frostpunk 2</span>
         </div>
 
-        <div class="bg-accentLight rounded h-[200px] overflow-hidden relative" id="top2">
+        <div class="bg-accentLight rounded h-[175px] overflow-hidden relative" id="top2">
             <img class="w-full h-full object-cover rounded transition-transform duration-300 hover:scale-110" src="https://i.blogs.es/c0ebf0/age-of-mytology-retold/1366_2000.jpeg"></img>
             <span class="absolute bottom-4 left-4 text-white font-semibold">Age of Mythology: Retold</span>
         </div>
 
-        <div class="bg-accentLight rounded h-[200px] overflow-hidden relative" id="bottom2">
+        <div class="bg-accentLight rounded h-[175px] overflow-hidden relative" id="bottom2">
             <img class="w-full h-full object-cover rounded transition-transform duration-300 hover:scale-110" src="https://assetsio.gnwcdn.com/sea-of-thieves-review-1522069998234.jpg"></img>
             <span class="absolute bottom-4 left-4 text-white font-semibold">Sea of Thieves</span>
         </div>
@@ -25,10 +25,28 @@
 </section>
 
 <style>
-	#featuredGames {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 350px 200px;
-		row-gap: 1rem;
-	}
+    #featuredGames {
+        display: grid;
+        grid-template-columns: 2fr 2fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+            "top1 bottom1 top2"
+            "top1 bottom1 bottom2";
+    }
+
+    #top1 {
+        grid-area: top1;
+    }
+
+    #bottom1 {
+        grid-area: bottom1;
+    }
+
+    #top2 {
+        grid-area: top2;
+    }
+
+    #bottom2 {
+        grid-area: bottom2;
+    }
 </style>
