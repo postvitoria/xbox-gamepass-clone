@@ -1,4 +1,4 @@
-# Basic Xbox Gamepass frontend made with Astro
+# Basic Xbox Gamepass frontend developed with Astro
 
 ![just-the-basics](https://i.imgur.com/gfWtGn9.png)
 
